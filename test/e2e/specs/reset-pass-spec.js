@@ -1,5 +1,5 @@
-var LoginPage = require('../page-objects/LoginPage');
-var ForgotPassPage = require('../page-objects/ForgotPassPage');
+var LoginPage = require('../page-objects/login-page');
+var ForgotPassPage = require('../page-objects/forgot-pass-page');
 
 describe('As a user I\'m able to reset my password from the login page', function() {
 
@@ -10,6 +10,7 @@ describe('As a user I\'m able to reset my password from the login page', functio
     beforeAll(function() {
 
         browser.get('https://stable.psb-ci.fsxt.net');
+        browser.driver.sleep(1000);
         browser.wait(EC.visibilityOf(loginPage.loginSection), 10000);
         expect(loginPage.loginSection.isPresent()).toBe(true);
     });
